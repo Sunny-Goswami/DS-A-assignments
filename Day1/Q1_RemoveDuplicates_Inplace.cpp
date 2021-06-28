@@ -8,21 +8,18 @@ public:
         int numLen = nums.size();
         if (numLen==0) return 0;
         
-        for (int i=(numLen-2); i>=0; i--){
-            if (nums[i] == nums[i+1]){
-                nums[i+1] = -101;
+        int i = 1, j = 0;
+        while(j < numLen-1){
+            if (nums[j] != nums[j + 1]){
+                nums[i] = nums[j + 1];
+                i++;
             }
+            j++;
         }
-        int k = 0;
-        for(int i=0; i<numLen; i++){
-            if (nums[i] != -1){
-                nums[k] = nums[i];
-                k++;
-            }
-        }
-        return k;
+        return i;
     }
 };
+
 
 int main(){
     int N; cin >> N;
@@ -39,8 +36,6 @@ int main(){
     
     Solution obj; 
     int k = obj.removeDuplicates(arr);
-    for(auto it: arr){
-        cout << it << " ";
-
-
+    for (int i = 0; i < k; i++) 
+        cout << arr[i] << " ";
 }
