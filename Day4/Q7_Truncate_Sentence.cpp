@@ -18,7 +18,6 @@ public:
         return res;
     }
 };
-
 int main() {
     string sent; getline(cin, sent);
     int k; cin >> k;
