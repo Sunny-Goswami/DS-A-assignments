@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 class Solution {
-    void reverse(vector<vector<int>>& image, int left, int right, int i){
+    void reverse(vector<vector<int>>& image, int i){
+        int left = 0, right = image[0].size()-1; 
         while (left <= right){
             swap(image[i][left], image[i][right]);
             left++;
@@ -16,7 +17,7 @@ public:
             for(int j=0; j<cols; j++){
                 image[i][j] = 1^image[i][j];
             }
-            reverse(image, 0, cols-1, i);
+            reverse(image, i);
         }
         return image;
     }
