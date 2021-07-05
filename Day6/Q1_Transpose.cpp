@@ -12,13 +12,7 @@ public:
         int p = 0, k = 0;
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
-                
-                res[p++][k] = matrix[i][j];
-                
-                if (p >= n) {
-                    p = 0;
-                    k++;
-                }
+                res[j][i] = matrix[i][j];
             }
         }
 
